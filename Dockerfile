@@ -23,8 +23,7 @@ RUN cd /root \
   && curl -fsSL https://pkgs.tailscale.com/stable/debian/bullseye.tailscale-keyring.list | tee /etc/apt/sources.list.d/tailscale.list \
   && apt update && apt install -y tailscale
 
-RUN 
-  && cd /etc/supervisor/conf.d \
+RUN cd /etc/supervisor/conf.d \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/brook.conf \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/cloudflared.conf \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/tailscale.conf \
