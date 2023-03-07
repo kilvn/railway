@@ -1,6 +1,6 @@
 FROM debian
 RUN apt update && apt upgrade -y && apt dist-upgrade -y && apt autoremove -y && apt autoclean -y
-RUN apt install ssh curl wget zip htop screen npm tree cron supervisor -y
+RUN apt install ssh curl wget vim nano zip htop screen npm tree cron supervisor -y
 RUN npm install -g wstunnel
 
 RUN cd /root \
