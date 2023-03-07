@@ -1,0 +1,20 @@
+tunnel: e60a9488-f332-4ee1-8620-fb936b578f97
+credentials-file: /root/.cloudflared/e60a9488-f332-4ee1-8620-fb936b578f97.json
+protocol: h2mux
+ingress:
+  # 连接到本地的80端口
+  - hostname: railway.emmmmmm.ml
+    service: http://127.0.0.1:80
+  # https协议，连接到本地的443端口，禁用证书校验（用于自签名SSL证书）
+  - hostname: railway.emmmmmm.ml
+    service: https://127.0.0.1:443
+    originRequest:
+      noTLSVerify: true
+      originServerName: railway.emmmmmm.ml
+  # 反代MySQL sock服务
+  - hostname: railway.emmmmmm.ml
+    service: http://127.0.0.1:65535
+  # 反代SSH服务
+  - hostname: railway.emmmmmm.ml
+    service: ssh://127.0.0.1:22
+  - service: http_status:404
