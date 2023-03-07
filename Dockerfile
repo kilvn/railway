@@ -27,7 +27,7 @@ RUN cd /etc/supervisor/conf.d \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/brook.conf \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/cloudflared.conf \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/tailscale.conf \
-  && systemctl enable supervisor && systemctl start supervisor \
+  && systemctl enable supervisor && supervisor -c /etc/supervisor/supervisor.conf \
   && cd /root/.cloudflare \
   && wget https://raw.githubusercontent.com/kilvn/railway/master/conf/config.yml \
   && supervisorctl update
