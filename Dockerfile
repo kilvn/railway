@@ -8,5 +8,5 @@ RUN echo '/usr/sbin/sshd -D' >>/run.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:railway|chpasswd
 RUN chmod 755 /run.sh
-EXPOSE 80
+EXPOSE 80 443 60000 65535
 CMD  /run.sh
